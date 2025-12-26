@@ -8,11 +8,11 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HelloWorld msg="A ve que onda esto" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/chart">Chart</RouterLink>
       </nav>
     </div>
   </header>
@@ -22,6 +22,13 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <style scoped>
 header {
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
 }
 </style>

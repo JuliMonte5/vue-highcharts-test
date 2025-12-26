@@ -21,6 +21,7 @@ const dataValues = computed(() => {
 
 const chartOptions = computed<Options>(() => ({
   lang: {
+    //importante agregar esta regla a la config, sino no se dibuja el chart!
     decimalPoint: ',',
   },
   title: {
@@ -60,6 +61,7 @@ const chartOptions = computed<Options>(() => ({
 .chart {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 .configuration {
   display: flex;
