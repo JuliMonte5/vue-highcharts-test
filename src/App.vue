@@ -13,6 +13,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/chart">Chart</RouterLink>
+        <RouterLink to="/data-fetch">Data Fetch</RouterLink>
       </nav>
     </div>
   </header>
@@ -30,5 +31,6 @@ header {
 nav {
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 </style>

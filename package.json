@@ -20,6 +20,7 @@
     "highcharts": "^12.4.0",
     "highcharts-vue": "^2.0.1",
     "pinia": "^3.0.4",
+    "unplugin-vue-router": "^0.19.1",
     "vue": "^3.5.25",
     "vue-router": "^4.6.3"
   },

@@ -73,6 +73,15 @@
     sans-serif;
 }
 
+button {
+  background: none;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 *,
 *::before,
 *::after {
@@ -83,7 +92,6 @@
 
 body {
   min-height: 100vh;
-  width: 100vw;
   color: var(--color-text);
   background: var(--color-background);
   transition:

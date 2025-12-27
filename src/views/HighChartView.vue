@@ -24,15 +24,25 @@ const chartOptions = computed<Options>(() => ({
     //importante agregar esta regla a la config, sino no se dibuja el chart!
     decimalPoint: ',',
   },
+  chart: {
+    style: {
+      height: 300,
+    },
+  },
   title: {
-    text: 'Function plot',
+    text: 'x² Function Plot',
     style: {
       color: '#fff',
     },
   },
   yAxis: {
     title: {
-      text: 'Amount',
+      text: 'f(x)',
+    },
+  },
+  xAxis: {
+    title: {
+      text: 'x',
     },
   },
   series: [
@@ -62,6 +72,8 @@ const chartOptions = computed<Options>(() => ({
   display: flex;
   gap: 1rem;
   justify-content: center;
+  flex-grow: 1;
+  height: 100%;
 }
 .configuration {
   display: flex;
