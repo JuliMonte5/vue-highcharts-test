@@ -1,11 +1,18 @@
 <template>
-  <div class="loader"></div>
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
 </template>
 
 <style scoped>
+.loader-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
 .loader {
   width: 60px;
-  height: 100%;
   aspect-ratio: 4;
   --c: var(--text-color-green) 90%, #0000;
   background:

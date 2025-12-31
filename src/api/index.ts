@@ -1,5 +1,6 @@
-import { getFakeData } from './fakeData'
+import { getFakeCartById, getFakeData } from './fakeData'
 
 export const api = {
   getFakeData,
+  getFakeCartById,
 }
