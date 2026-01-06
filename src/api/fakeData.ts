@@ -57,10 +57,11 @@ export interface User {
 
 export const getFakeData = async (): Promise<FakeCartsData> => {
   const res = await get('https://dummyjson.com/carts?delay=1000')
-  return await res.json()
+  return res.json()
 }
 
 export const getFakeCartById = async (cartId?: string | string[]): Promise<Cart> => {
-  const res = await get(`https://dummyjson.com/carts/${cartId}`)
-  return await res.json()
+  console.log(cartId)
+  const res = await get(`https://dummyjson.com/carts/${cartId}?delay=1000`)
+  return res.json()
 }

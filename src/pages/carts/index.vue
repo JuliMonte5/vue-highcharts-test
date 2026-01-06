@@ -1,16 +1,9 @@
-<script lang="ts">
-import { api } from '@/api'
+<script lang="ts" setup>
+import router from '@/router'
 import ReloadIcon from '@/components/icons/ReloadIcon.vue'
 import LoadingComponent from '@/components/ui/LoadingComponent.vue'
-import router from '@/router'
-import { defineBasicLoader } from 'unplugin-vue-router/data-loaders/basic'
+import { useFakeData } from '@/loaders/fakeCartsData'
 
-export const useFakeData = defineBasicLoader('/carts', async () => {
-  return api.getFakeData()
-})
-</script>
-
-<script lang="ts" setup>
 const { data, isLoading, reload } = useFakeData()
 </script>
 
@@ -21,7 +14,7 @@ const { data, isLoading, reload } = useFakeData()
       <ReloadIcon />
     </button>
     <LoadingComponent v-if="isLoading" />
-    <template v-else>
+    <template v-else-if="data">
       <div class="carts-container">
         <div
           v-for="cart in data.carts"

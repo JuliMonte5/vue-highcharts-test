@@ -13,9 +13,6 @@ export default defineConfigWithVueTs(
   {
     name: 'app/files-to-lint',
     files: ['**/*.{ts,mts,tsx,vue}'],
-    rules: {
-      'vue/multi-word-component-names': 'off',
-    },
   },
 
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
@@ -28,4 +25,9 @@ export default defineConfigWithVueTs(
     files: ['src/**/__tests__/*'],
   },
   skipFormatting,
+  {
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
 )

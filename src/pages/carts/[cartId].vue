@@ -1,15 +1,12 @@
 <script lang="ts">
-import { api } from '@/api'
-import LoadingComponent from '@/components/ui/LoadingComponent.vue'
-import { defineBasicLoader } from 'unplugin-vue-router/data-loaders/basic'
-
-export const useFakeCartData = defineBasicLoader('/carts/[cartId]', async (route) => {
-  console.log(route)
-  return api.getFakeCartById(route.params.cartId)
-})
+import { useFakeCartData } from '@/loaders/fakeCartData'
+export { useFakeCartData }
 </script>
 
 <script lang="ts" setup>
+import LoadingComponent from '@/components/ui/LoadingComponent.vue'
+import type { Product } from '@/api/fakeData'
+
 const { data, isLoading } = useFakeCartData()
 </script>
 
@@ -17,7 +14,12 @@ const { data, isLoading } = useFakeCartData()
   <LoadingComponent v-if="isLoading" />
   <div v-else class="cart">
     <p v-for="(value, key, index) in data" :key="index">
-      <b>{{ key }}:</b> {{ value }}
+      <template v-if="key === 'products'">
+        <b>{{ key }}:</b> {{ (value as Product[]).map((v) => v.title) }}
+      </template>
+      <template v-else>
+        <b>{{ key }}:</b> {{ value }}
+      </template>
     </p>
   </div>
 </template>
