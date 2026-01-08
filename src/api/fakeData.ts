@@ -61,7 +61,6 @@ export const getFakeData = async (): Promise<FakeCartsData> => {
 }
 
 export const getFakeCartById = async (cartId?: string | string[]): Promise<Cart> => {
-  console.log(cartId)
   const res = await get(`https://dummyjson.com/carts/${cartId}?delay=1000`)
   return res.json()
 }

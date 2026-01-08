@@ -17,6 +17,7 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
+    "@pinia/colada": "^0.21.0",
     "highcharts": "^12.4.0",
     "highcharts-vue": "^2.0.1",
     "pinia": "^3.0.4",
